@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { UserContext } from '../UserContext';
+import { UserContext } from '../../UserContext';
 import Routing from "./Routing";
 
 test("renders <Routing />", () => {

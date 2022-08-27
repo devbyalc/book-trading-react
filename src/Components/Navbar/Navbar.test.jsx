@@ -1,6 +1,6 @@
 import {render,screen} from "@testing-library/react";
 import Navbar from "./Navbar";
-import { UserContext } from "../UserContext";
+import { UserContext } from "../../UserContext";
 import { BrowserRouter } from "react-router-dom";
 
 jest.mock("react-router-dom", () => ({

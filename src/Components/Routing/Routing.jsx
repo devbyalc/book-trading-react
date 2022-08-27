@@ -1,11 +1,11 @@
-import Home from '../Pages/Home';
-import Requests from '../Pages/Requests';
-import Trades from '../Pages/Trades';
-import Users from '../Pages/Users';
+import Home from '../../Pages/Home/Home';
+import Requests from '../../Pages/Requests/Requests';
+import Trades from '../../Pages/Trades/Trades';
+import Users from '../../Pages/Users/Users';
 import Layout from './Layout';
-import Login from '../Pages/Login';
-import Profile from '../Pages/Profile';
-import MyBooks from '../Pages/MyBooks';
+import Login from '../../Pages/Login';
+import Profile from '../../Pages/Profile/Profile';
+import MyBooks from '../../Pages/MyBooks/MyBooks';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const Routing = () => {

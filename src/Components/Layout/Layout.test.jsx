@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { UserContext } from '../UserContext';
+import { UserContext } from '../../UserContext';
 import Layout from './Layout';
 import { BrowserRouter } from "react-router-dom";
 
