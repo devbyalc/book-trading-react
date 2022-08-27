@@ -1,7 +1,7 @@
 const MyBooks = () => {
     return (
           <div className="">
-            MyBooks
+            My Books
           </div>
   
     );
