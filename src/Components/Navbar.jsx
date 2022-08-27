@@ -4,7 +4,7 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { UserContext } from "../UserContext";
 
 const Navbar = () => {
-  const { user,setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [toggleOnReq, setToggleOnReq] = useState(false);
   const [toggleUser, setToggleUser] = useState(false);
   const navigation = useNavigate();
@@ -19,14 +19,15 @@ const Navbar = () => {
   }
 
   const onLogout = () => {
-    setUser(null);
+    setUser("public");
   }
 
   useEffect(() => {
-    if (!user) {
+    if (user === "public") {
       navigation("/login" + location.search);
     }
   },[user]);
+
 
   const renderUserDropdown = () => {
     return (
@@ -56,22 +57,6 @@ const Navbar = () => {
           <li className={"p-4"}>
             <Link to="/">Books</Link>
           </li>
-          {/* <li
-            className={
-              "mr-5 " + styles.caret + " " + (toggleOn && styles.caretDown)
-            }
-            onClick={() => onClick()}
-          >
-            <span>Requests</span>
-            <ul className={ toggleOn ? styles.active : styles.nested}>
-              <li>
-                <Link to="/requests">All Requests</Link>
-              </li>
-              <li>
-                <Link to="/requests/new">Create Requests</Link>
-              </li>
-            </ul>
-          </li> */}
           <li>
             <div className={styles.dropdown}>
               <button onClick={() => onClickRequest()} className={styles.dropbtn}>
@@ -98,12 +83,12 @@ const Navbar = () => {
         </ul>
       </div>
       <div className={styles.navRight}>
-        {!user && (
+        {user === "public" && (
           <Link to="/login">
             <span className="p-4">Login</span>
           </Link>
-        )}
-        {user && renderUserDropdown()}
+       )}
+        {user !== "public" && renderUserDropdown()}
       </div>
     </nav>
   );

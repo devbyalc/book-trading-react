@@ -14,7 +14,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (user) {
+    if (user !== "public") {
       navigation("/" + location.search);
     }
   },[user]);
